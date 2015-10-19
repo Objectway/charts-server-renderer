@@ -1,12 +1,16 @@
 {
-  "name": "spike-d3-node",
+  "name": "d3-server-renderer",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Michele Di Salvatore",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Objectway/d3-server-renderer.git"
+  },
   "license": "ISC",
   "dependencies": {
     "d3": "^3.5.6",
