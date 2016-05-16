@@ -7,13 +7,12 @@ module.exports = function (data) {
     var svg = d3.select(document.body).append("svg");
 
     // EDITING STARTS HERE
+    var diameter = 960;
 
     svg.attr("width", diameter)
         .attr("height", diameter - 150)
         .append("g")
         .attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
-
-    var diameter = 960;
 
     var tree = d3.layout.tree()
         .size([360, diameter / 2 - 120])
