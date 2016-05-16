@@ -3,12 +3,12 @@ A d3 server renderer easy to customize, it uses d3.js to render svg charts on th
 it.
 
 ## Getting started
-- run ``$ npm install -g d3-server-renderer`` and launch it ``$ d3-server-renderer``
 - clone this project
-- open in your browser the file demo/example.html to see an example
+- run it ``$ node .``
+- open your browser at [localhost:1337](http://localhost:1337)
 
 ## How to add a new chart type
-- inside config, create a copy of radial-reingold–tilford-tree.js and call it with a significant name, e.g. donut.js
+- inside the config directory, create a copy of radial-reingold–tilford-tree.js and call it with a significant name, e.g. donut.js
 - in donut.js delete all the code between ``// EDITING STARTS HERE [...] // EDITING ENDS ERE``
 - following the e.g. [http://bl.ocks.org/mbostock/3887193](http://bl.ocks.org/mbostock/3887193) 
 - edit the js in this way (copy it as is in your IDE):
