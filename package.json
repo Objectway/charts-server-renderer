@@ -13,9 +13,10 @@
   },
   "license": "ISC",
   "dependencies": {
-    "d3": "^3.5.6",
-    "express": "^4.13.3",
-    "jsdom": "^6.5.1",
-    "xmldom": "^0.1.19"
+    "d3": "~3.5.6",
+    "express": "~4.13.3",
+    "jsdom": "~6.5.1",
+    "xmldom": "0.1.19",
+    "serve-static": "~1.10.2"
   }
 }
