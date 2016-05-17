@@ -1,7 +1,18 @@
 {
   "name": "d3-server-renderer",
   "version": "1.1.0",
-  "description": "",
+  "description": "A D3 renderer server that returns the generated svg",
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org"
+  },
+  "keywords": [
+    "d3",
+    "d3 server side",
+    "d3 server",
+    "d3 renderer",
+    "chats server side",
+    "chats generator"
+  ],
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
