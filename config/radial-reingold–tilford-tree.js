@@ -4,12 +4,17 @@ var d3 = require('d3')
     ;
 
 module.exports = function (data) {
-    var svg = d3.select(document.body).append("svg");
+    /*
+    * Use this variable instead of d3.select("body").append("svg")
+    * */
+    var wrapper = d3.select(document.body).append("svg").attr('xmlns', 'http://www.w3.org/2000/svg');
 
     // EDITING STARTS HERE
+
     var diameter = 960;
 
-    svg.attr("width", diameter)
+    var svg = wrapper
+        .attr("width", diameter)
         .attr("height", diameter - 150)
         .append("g")
         .attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
@@ -57,8 +62,9 @@ module.exports = function (data) {
             return d.name;
         });
 
+    d3.select(document.frameElement).style("height", diameter - 150 + "px");
+
     // EDITING ENDS HERE
 
-    var svgObject = d3.select(document.body).select("svg").attr('xmlns', 'http://www.w3.org/2000/svg');
-    return new xmldom.XMLSerializer().serializeToString(svgObject[0][0]);
+    return new xmldom.XMLSerializer().serializeToString(wrapper[0][0]);
 };
