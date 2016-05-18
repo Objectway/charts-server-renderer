@@ -1,23 +1,9 @@
-var d3 = require('d3')
-    , document = require('jsdom').jsdom()
-    , xmldom = require('xmldom')
-    ;
+var d3 = require('d3');
 
-module.exports = function (data) {
-    /*
-    * Use this variable instead of d3.select("body").append("svg")
-    * */
-    var wrapper = d3.select(document.body).append("svg").attr('xmlns', 'http://www.w3.org/2000/svg');
-
+module.exports = function (document, wrapper, data) {
     // EDITING STARTS HERE
 
     var diameter = 960;
-
-    var svg = wrapper
-        .attr("width", diameter)
-        .attr("height", diameter - 150)
-        .append("g")
-        .attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
 
     var tree = d3.layout.tree()
         .size([360, diameter / 2 - 120])
@@ -30,7 +16,28 @@ module.exports = function (data) {
             return [d.y, d.x / 180 * Math.PI];
         });
 
-    var nodes = tree.nodes(data),
+    /*
+     * Use this variable instead of d3.select("body").append("svg")
+     * */
+    // var svg = d3.select("body").append("svg")
+    var svg = wrapper
+        .attr("width", diameter)
+        .attr("height", diameter - 150)
+        .append("g")
+        .attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+
+    /*
+     * You don't need to require the json file with data
+     * */
+    // d3.json("flare.json", function (error, root) {
+    //     if (error) throw error;
+
+    /*
+     * Define the variable "root" with the data argument of the module
+     * */
+    var root = data;
+
+    var nodes = tree.nodes(root),
         links = tree.links(nodes);
 
     var link = svg.selectAll(".link")
@@ -61,10 +68,14 @@ module.exports = function (data) {
         .text(function (d) {
             return d.name;
         });
+    // });
 
+    /*
+     * Replace "self" with "document"
+     * */
+    // d3.select(self.frameElement).style("height", diameter - 150 + "px");
     d3.select(document.frameElement).style("height", diameter - 150 + "px");
 
     // EDITING ENDS HERE
-
-    return new xmldom.XMLSerializer().serializeToString(wrapper[0][0]);
+    return wrapper[0][0];
 };
