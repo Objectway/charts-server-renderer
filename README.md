@@ -4,7 +4,8 @@ it.
 
 ## Getting started
 - clone this project
-- run it ``$ node .``
+- install all dependencies `npm install`
+- run it `node .`
 - open your browser at [localhost:1337](http://localhost:1337)
 
 ## How to add a new chart type
@@ -67,7 +68,7 @@ it.
 
 ```
 
-- now in the [demo-file](demo/index.html), make a request to the new chart:
+- now in the demo/index.html, make a request to the new chart:
     - set the value of variable chartType to donut: `var chartType = 'donut';`
     - convert the [csv file](http://bl.ocks.org/mbostock/3887193#data.csv) to a 
     valid json using a service like [this](http://www.csvjson.com/csv2json)
