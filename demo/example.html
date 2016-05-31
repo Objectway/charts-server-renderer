@@ -29,7 +29,6 @@
     Tree</a> example</h1>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script>
-    var chartType = 'radial-reingold–tilford-tree';
     var chartData = {
         "name": "flare",
         "children": [
@@ -1073,9 +1072,8 @@
 
     $.ajax({
         type: 'POST',
-        url: 'http://127.0.0.1:1337/',
+        url: 'http://127.0.0.1:1337/d3/radial-reingold–tilford-tree.svg?' + (new Date()).getTime(),
         data: JSON.stringify({
-            type: chartType,
             data: chartData
         }),
         dataType: 'json',
